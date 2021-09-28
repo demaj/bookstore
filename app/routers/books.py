@@ -19,25 +19,25 @@ router = APIRouter(prefix="/books")
     response_model=BookListResponse,
     response_model_exclude_none=True
 )
-def list_books(
+def books_list(
     # db: Session = Depends(dependencies.get_db),
     filters: BookFilter = Depends(),
     pagination: BookPagination = Depends()
 ) -> Dict:
-    """ Retrieve list of books """
+    """ Retrieve a list of books """
     return
 
 
 @router.post("/", response_model=Book)
-def create_book(book_in: BookCreate, response: Response):
+def books_create(book_in: BookCreate, response: Response):
     """ Create a new book """
     return
 
 
 @router.get("/{id}", response_model=Book)
-def read_book(
+def books_read(
     # db: Session = Depends(dependencies.get_db),
     id: int
 ):
-    """ Update a book """
+    """ Read book details """
     return
