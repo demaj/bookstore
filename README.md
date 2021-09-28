@@ -1,4 +1,4 @@
-# Online Bookstore
+# Bookstore
 An online Bookstore API built with FastAPI
 
 ## Getting Started
