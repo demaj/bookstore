@@ -23,3 +23,6 @@ docker-compose exec web alembic upgrade head
 docker-compose exec web python /code/app/initial_data.py
 ```
 
+#### URLs:
+- http://127.0.0.1:8000/docs
+- http://127.0.0.1:8000/redoc
