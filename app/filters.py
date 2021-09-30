@@ -8,5 +8,9 @@ class BaseFilter(BaseModel):
         use_enum_values = True
 
 
+class UserFilter(BaseFilter):
+    ...
+    
+
 class BookFilter(BaseFilter):
     title: Optional[str] = Query(None, description="Date")

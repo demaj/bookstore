@@ -7,13 +7,14 @@ services:
       context: .
     entrypoint: bash
     command: >
-      -c "cd /code/app && uvicorn main:app --reload --host=0.0.0.0 --port=8080"
+      -c "cd /code/app && uvicorn main:app --reload --host=0.0.0.0 --port=8000"
     volumes:
+      - ./alembic:/code/alembic
       - ./app:/code/app
     env_file:
-      - app.secrets.env
+      - .env
     ports:
-      - "8080:8080"
+      - "8000:8000"
     depends_on:
       - db
     networks:
@@ -24,9 +25,11 @@ services:
     container_name: db_container
     image: postgres:13.4-alpine3.14
     volumes:
-      - postgres_data:/var/lib/postgresql/data/
+      - postgres_data:/var/lib/postgresql/data/pgdata
     env_file:
-      - app.secrets.env
+      - .env
+    environment:
+      - PGDATA=/var/lib/postgresql/data/pgdata
     ports:
       - "5432:5432"
     networks:

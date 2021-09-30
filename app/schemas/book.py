@@ -1,5 +1,5 @@
-from pydantic import BaseModel
 from typing import Optional
+from pydantic import BaseModel
 
 
 class BookBase(BaseModel):
@@ -14,7 +14,8 @@ class BookCreate(BookBase):
     author: str
 
 
-class Book(BookBase):
+class Book(BookCreate):
     id: int
-    title: str
-    author: str
+
+    class Config:
+        orm_mode = True

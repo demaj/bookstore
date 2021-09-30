@@ -41,6 +41,7 @@ passlib==1.7.4
 pickleshare==0.7.5
 promise==2.3
 prompt-toolkit==3.0.20
+psycopg2==2.9.1
 psycopg2-binary==2.9.1
 pyasn1==0.4.8
 pycparser==2.20

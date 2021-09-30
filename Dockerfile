@@ -17,7 +17,7 @@ RUN python -m venv /py && \
     chown -R app:app /vol && \
     chmod -R 755 /vol
 
-COPY ./app /code/app
+COPY . /code
 
 ENV PATH="/py/bin:$PATH"
 
